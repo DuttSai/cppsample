@@ -1,0 +1,32 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Person {
+private:
+	int personId;
+	string firstName,lastName;
+protected:
+	void acceptPerson() {
+		cout << "Enter Person FirstName,lastName and ID"<<endl;
+		cin >> firstName >> lastName >> personId;
+	}
+	void displayPerson() {
+		cout <<"Id" << personId << "FirstName :" << firstName << "LastName" << lastName << endl;
+	}
+	
+};
+class Employee : public Person {
+public:
+	void acceptEmployee() {
+		acceptPerson();
+	}
+	void displayEmployee() {
+		displayPerson();
+	}
+};
+int main() {
+	Employee e;
+	e.acceptEmployee();
+	e.displayEmployee();
+}
