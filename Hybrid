@@ -1,0 +1,30 @@
+class UgStudent:public Person {
+public:
+	int UG_marks;
+  void	assignMarks(int m) {
+	  UG_marks = m;
+	}
+  void printMarks() {
+	  cout << UG_marks << endl;
+  }
+};
+class Sports {
+public:
+	string sportName;
+	void assignSportName(string sp) {
+		sportName = sp;
+	}
+	void printSport() {
+		cout << sportName << endl;
+	}
+};
+class PGStudent : public UgStudent,public Sports{
+	
+};
+int main() {
+	PGStudent pgObj;
+	pgObj.assignMarks(400);
+	pgObj.printMarks();
+	pgObj.assignSportName("Cricket");
+	pgObj.printSport();
+}
